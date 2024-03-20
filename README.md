@@ -1,21 +1,35 @@
-# Not being able to share the screen on Discord in Ubuntu operating system
-This repository is for Ubuntu users who do not allow screen sharing on Discord.
+# Unable to Share Screen in Discord on Ubuntu
 
-# Ubuntu İşletim Sisteminde Discord'da Ekran Paylaşamama Sorunu
-
-Bu depo Discord'da ekran paylaşımına izin vermeyen Ubuntu kullanıcıları içindir.
+This repository is for Ubuntu users who are unable to share their screens in Discord.
 
 ---
 
-## Açıklama
+## Description
 
-Bu depoda, Ubuntu işletim sistemi kullanan kullanıcılar için Discord'da ekran paylaşımı sorununu çözmek için adımlar ve çözüm önerileri bulunmaktadır.
+This repository contains steps and solutions for Ubuntu users facing issues with screen sharing in Discord.
 
 ---
 
-## Çözüm Adımları
+## Solution Steps
 
-1. Terminal'i açın ve aşağıdaki komutu girin:
+1. Open the terminal and enter the following command:
 
    ```bash
    echo $XDG_SESSION_TYPE
+
+This command will display the session type.
+
+2. If the output is "wayland," follow these steps:
+
+   ```bash
+   sudo vi /etc/gdm3/custom.conf
+Enter this command to access the config file.
+
+3. Inside the config file, if 'WaylandEnable' is commented out in the lines, uncomment it and set WaylandEnable=false.
+4. Save and exit the file using 'esc :wq' command
+5. Finally, restart your computer using the following command:
+    ```bash
+   sudo reboot now
+
+
+ISSUE RESOLVED :partying_face:
