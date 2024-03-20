@@ -31,5 +31,6 @@ Enter this command to access the config file.
     ```bash
    sudo reboot now
 
+---
 
 ISSUE RESOLVED :partying_face:
